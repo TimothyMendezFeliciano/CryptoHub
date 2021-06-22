@@ -6,9 +6,16 @@ import { RouterModule } from "@angular/router";
 import { PostsComponent } from "../../modules/posts/posts.component";
 import { SharedModule } from "../../shared/shared.module";
 import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
   declarations: [DefaultComponent, DashboardComponent, PostsComponent],
-  imports: [CommonModule, RouterModule, SharedModule, MatSidenavModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    SharedModule,
+    MatSidenavModule,
+    MatCardModule,
+  ],
 })
 export class DefaultModule {}
