@@ -1,0 +1,24 @@
+<!-- <div class="thumbnail"
+     matRipple
+     [matRippleCentered]="false"
+     [matRippleUnbounded]="false"
+     [matRippleRadius]="100"
+     >
+  Click me
+</div> -->
+
+<mat-grid-list cols="4" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let post of posts">
+    <mat-card class="thumbnail" matRipple [matRippleCentered]="false" [matRippleUnbounded]="false"
+    [matRippleRadius]="100" [matRippleColor]="'#c2175b'">
+      <mat-card-header>
+        <mat-card-title>
+          <h2>{{post.title}}</h2>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <span>{{post.url}}</span>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

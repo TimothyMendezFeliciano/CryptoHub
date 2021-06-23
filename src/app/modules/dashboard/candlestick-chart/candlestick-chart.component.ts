@@ -24,7 +24,7 @@ export class CandlestickChartComponent implements OnInit {
 
   private defaultMarketPair = "BTCUSDT";
   private defaultInterval = "1d";
-  private defaultLimit = 14;
+  private defaultLimit = 30;
   candleStickChart: GoogleChartInterface;
   private candleData: OHLC[];
 
@@ -35,7 +35,6 @@ export class CandlestickChartComponent implements OnInit {
 
   constructor(private binance: BinanceService) {}
   ngOnInit() {
-    // this.verifyInputParameters(this.marketPair, this.interval, this.limit);
     if (this.marketPair === "" || this.marketPair === undefined) {
       this.marketPair = this.defaultMarketPair;
     }

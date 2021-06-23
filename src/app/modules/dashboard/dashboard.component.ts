@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
   defaultMarketPair: string = "BTCUSDT";
   availableMarketPairs: string[];
 
-  defaultLimit: number = 14;
+  defaultLimit: number = 30;
   availableLimit: number[] = [14, 30, 50, 100, 250, 500, 1000];
 
   public options: FormGroup;

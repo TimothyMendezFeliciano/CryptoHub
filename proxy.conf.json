@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+    "target": "https://cryptopanic.com/",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

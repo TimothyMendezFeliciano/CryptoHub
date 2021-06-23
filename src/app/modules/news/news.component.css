@@ -1,0 +1,28 @@
+.thumbnail {
+  border: 1px solid #c2175b;
+  border-radius: 4px;
+  padding: 5px;
+  width: 300px;
+  height: 300px;
+}
+
+.thumbnail:hover {
+  box-shadow: 0 0 2px 1px rgba(194, 23, 91);
+}
+
+.ripple-container {
+  cursor: pointer;
+  text-align: center;
+
+  width: 300px;
+  height: 300px;
+  line-height: 300px;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
