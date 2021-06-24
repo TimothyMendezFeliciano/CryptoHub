@@ -10,13 +10,18 @@ import { NewscatcherService } from "../../services/newscatcher/newscatcher.servi
 export class NewsComponent implements OnInit {
   public posts: Posts[];
   public rippleColor: "blue";
+  public isReady: boolean;
   constructor(private newscatcher: NewscatcherService) {}
 
   ngOnInit(): void {
+    this.isReady = false;
     this.newscatcher.getNews().subscribe({
       next: (result) => {
         this.posts = result.results;
         console.log(this.posts);
+      },
+      complete: () => {
+        this.isReady = true;
       },
     });
   }

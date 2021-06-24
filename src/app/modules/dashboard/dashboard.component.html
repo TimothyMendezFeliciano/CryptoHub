@@ -36,6 +36,9 @@
       </button>
     </form>
   </mat-card-header>
+  <mat-card-content class="wrapper" *ngIf="!isReady" style="margin: 0 auto;">
+    <mat-spinner></mat-spinner>
+  </mat-card-content>
   <mat-card-content *ngIf="isReady">
     <app-candlestick-chart [marketPair]="options.value.marketPair" [interval]="options.value.timeFrame"
       [limit]="options.value.limit" (candleStickReadyEvent)="candleStickReady($event)"></app-candlestick-chart>

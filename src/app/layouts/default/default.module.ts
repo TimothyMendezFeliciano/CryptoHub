@@ -14,7 +14,9 @@ import { CandlestickChartComponent } from "../../modules/dashboard/candlestick-c
 import { Ng2GoogleChartsModule } from "ng2-google-charts";
 import { RsiChartComponent } from "src/app/modules/dashboard/rsi-chart/rsi-chart.component";
 import { MatGridListModule } from "@angular/material/grid-list";
-import { MatRippleModule } from '@angular/material/core';
+import { MatRippleModule } from "@angular/material/core";
+import { MatListModule } from "@angular/material/list";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { MatRippleModule } from '@angular/material/core';
     MatIconModule,
     Ng2GoogleChartsModule,
     MatGridListModule,
-    MatRippleModule
+    MatRippleModule,
+    MatListModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class DefaultModule {}
