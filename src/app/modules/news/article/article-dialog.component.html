@@ -1,0 +1,56 @@
+<h1>{{data.title}}</h1>
+<a mat-raised-button color="warn" href="{{data.url}}" target="_blank">Discuss on CryptoPanic</a>
+<mat-divider></mat-divider>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Votes
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list>
+      <mat-list-item>
+        Liked: {{data.votes.liked}}
+      </mat-list-item>
+      <mat-list-item>
+        Disliked: {{data.votes.disliked}}
+      </mat-list-item>
+      <mat-list-item>
+        Important: {{data.votes.important}}
+      </mat-list-item>
+      <mat-list-item>
+        Comments: {{data.votes.comments}}
+      </mat-list-item>
+      <mat-list-item>
+        LOL: {{data.votes.lol}}
+      </mat-list-item>
+      <mat-list-item>
+        Positive: {{data.votes.positive}}
+      </mat-list-item>
+      <mat-list-item>
+        Negative: {{data.votes.negative}}
+      </mat-list-item>
+      <mat-list-item>
+        Saved: {{data.votes.saved}}
+      </mat-list-item>
+      <mat-list-item>
+        Toxic: {{data.votes.toxic}}
+      </mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Article
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <img src={{data.metadata.image}} alt="No Image" style="width: 30%;
+    height: 20%;
+    float: left;
+    margin-right: 3px;
+    margin-bottom: 2px;">
+    <span>
+      {{ data.metadata.description }}
+    </span>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,9 @@
+.mat-divider {
+  border-top-color: #c2175b;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.mat-expansion-panel {
+  margin-bottom: 5px;
+}

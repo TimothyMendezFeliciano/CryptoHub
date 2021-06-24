@@ -2,11 +2,55 @@
   <mat-spinner></mat-spinner>
 </mat-card>
 
+<mat-toolbar *ngIf="isReady">
+  <form class="container" [formGroup]="options" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Select a Filter</mat-label>
+      <mat-select formControlName="filter">
+        <mat-option value="undefined">
+          No filter
+        </mat-option>
+        <mat-option value="rising">
+          rising
+        </mat-option>
+        <mat-option value="hot">
+          hot
+        </mat-option>
+        <mat-option value="bullish">
+          bullish
+        </mat-option>
+        <mat-option value="bearish">
+          bearish
+        </mat-option>
+        <mat-option value="important">
+          important
+        </mat-option>
+        <mat-option value="saved">
+          saved
+        </mat-option>
+        <mat-option value="lol">
+          lol
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select Kind of News</mat-label>
+      <mat-select formControlName="kind">
+        <mat-option value="all">All</mat-option>
+        <mat-option value="news">News</mat-option>
+        <mat-option value="media">Media</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class="submitButton" type="submit" mat-raised-button>
+      <mat-icon>search</mat-icon>
+    </button>
+  </form>
+</mat-toolbar>
+
 <mat-grid-list cols="4" rowHeight="1:1" *ngIf="isReady">
-  <mat-grid-tile *ngFor="let post of posts">
-    <a href="post.url" target="_blank">
+  <mat-grid-tile *ngFor="let post of posts; let i = index">
       <mat-card class="thumbnail" matRipple [matRippleCentered]="false" [matRippleUnbounded]="false"
-        [matRippleRadius]="100" [matRippleColor]="'#c2175b'">
+        [matRippleRadius]="100" [matRippleColor]="'#c2175b'" (click)="openDialog(i)">
         <mat-card-header>
           <mat-card-title>
             <h2> {{ post.title }} </h2>
@@ -16,10 +60,13 @@
         <mat-card-content>
           <mat-list>
             <mat-list-item>
-              <mat-icon>http</mat-icon> &nbsp; {{ post.domain }}
+              <mat-icon>language</mat-icon> &nbsp; {{ post.domain }}
             </mat-list-item>
             <mat-list-item *ngFor="let currencies of post.currencies">
               <mat-icon>monetization_on</mat-icon> &nbsp; {{ currencies.code }}
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon>date_range</mat-icon> &nbsp; {{ post.published_at | date : 'short'}}
             </mat-list-item>
             <mat-list-item *ngIf="post.kind === 'media'">
               <mat-icon>ondemand_video</mat-icon> &nbsp; {{ post.kind }}
@@ -27,6 +74,5 @@
           </mat-list>
         </mat-card-content>
       </mat-card>
-    </a>
   </mat-grid-tile>
 </mat-grid-list>

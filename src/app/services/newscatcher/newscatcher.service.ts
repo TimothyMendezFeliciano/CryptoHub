@@ -12,12 +12,17 @@ const routes = {
 })
 export class NewscatcherService {
   private public: boolean = true;
+  private PROmember: boolean = true;
   constructor(private http: HttpClient) {}
 
-  getNews() {
+  getNews(filter?: string, kind?: string, currencies?: string) {
     let params = new HttpParams()
       .set("auth_token", environment.cryptoPanicAuthToken)
-      .set("public", this.public);
+      .set("metadata", this.PROmember);
+
+    if (filter) params = params.set("filter", filter);
+    if (currencies) params = params.set("currencies", currencies);
+    if (kind) params = params.set("kind", kind);
     return this.http.get<NewsCatcherResult>(routes.posts, { params });
   }
 }

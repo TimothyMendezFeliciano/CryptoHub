@@ -17,6 +17,7 @@ export interface Posts {
   url: string;
   created_at: Date;
   currencies?: Currencies[];
+  metadata: Metadata;
 }
 
 export interface Votes {
@@ -43,4 +44,9 @@ export interface Currencies {
   title: string;
   slug: string;
   url: string;
+}
+
+export interface Metadata {
+  description: string;
+  image: string;
 }

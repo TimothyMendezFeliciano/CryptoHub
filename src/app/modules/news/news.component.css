@@ -3,7 +3,7 @@
   border-radius: 4px;
   padding: 5px;
   width: 300px;
-  height: 300px;
+  height: 325px;
 }
 
 .thumbnail:hover {
@@ -15,14 +15,16 @@
 }
 
 a {
-  color: #0060B6;
+  color: #0060b6;
   text-decoration: none !important;
 }
 
-a:hover, a:focus, a:active {
-  color:#00A0C6;
-  text-decoration:none !important;
-  cursor:pointer;
+a:hover,
+a:focus,
+a:active {
+  color: #00a0c6;
+  text-decoration: none !important;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -37,4 +39,20 @@ a:hover, a:focus, a:active {
   height: 240px;
   margin: 5px 10px 0px 0px;
   padding: 12px;
+}
+
+.mat-toolbar {
+  background-color: rgb(169, 23, 194);
+  border-radius: 4px;
+  padding-left: 15px;
+}
+
+.submitButton {
+  margin: 8px;
+  border: 2px;
+  border-radius: 3px;
+}
+
+.container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
 }

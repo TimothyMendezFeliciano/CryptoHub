@@ -17,7 +17,11 @@ import { MatGridListModule } from "@angular/material/grid-list";
 import { MatRippleModule } from "@angular/material/core";
 import { MatListModule } from "@angular/material/list";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
-
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatDialogModule } from "@angular/material/dialog";
+import { ArticleDialogComponent } from "src/app/modules/news/article/article-dialog.component";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatButtonModule } from "@angular/material/button";
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -25,6 +29,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     NewsComponent,
     CandlestickChartComponent,
     RsiChartComponent,
+    ArticleDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +46,10 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     MatRippleModule,
     MatListModule,
     MatProgressSpinnerModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatButtonModule,
   ],
 })
 export class DefaultModule {}
