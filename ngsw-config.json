@@ -1,0 +1,58 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "posts",
+      "urls": ["https://cryptopanic.com/api/v1/posts/"],
+      "version": 1,
+      "cacheConfig": {
+        "maxSize": 20,
+        "maxAge": "1m",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "binance",
+      "urls": [
+        "https://api.binance.com/api/v3/ping",
+        "https://api.binance.com/api/v3/klines",
+        "https://api.binance.com/api/v3/exchangeInfo"
+      ],
+      "version": 3,
+      "cacheConfig": {
+        "maxSize": 500,
+        "maxAge": "1h",
+        "timeout": "15s",
+        "strategy": "freshness"
+      }
+    }
+  ]
+}
